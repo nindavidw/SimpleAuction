@@ -25,32 +25,13 @@ export default function configureStore(initialState) {
   const store = createStore(reducers, initialState, enhancer);
 
   // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
+  // eslint-disable
   if (module.hot) {
     module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers')/*.default if you use Babel 6+ */)
+      store.replaceReducer(reducers/* default if you use Babel 6+ */)
     );
   }
+  // eslint-enable
 
   return store;
 }
-/* let createStoreWithMiddleware;
-
-// Configure the dev tools when in DEV mode
-if (__DEV__) {
-  let {devTools, persistState} = require('redux-devtools');
-  createStoreWithMiddleware = compose(
-    applyMiddleware(thunkMiddleware),
-    devTools(),
-    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-  )(createStore);
-} else {
-  createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
-}
-
-const rootReducer = combineReducers(reducers);
-
-export default function configureStore(initialState) {
-  return createStoreWithMiddleware(rootReducer, initialState);
-}
-
-*/

@@ -60,13 +60,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        include: path.resolve("../src/sass/local/"),
         /* eslint-disable */
         loader: ExtractTextPlugin.extract(
           "style",
-          "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass?" +
-          "sourceMap&" +
-          "includePaths[]=" +
+          "css!sass?sourceMap&" +
+          "includePaths[]=" + 
           (path.resolve(__dirname, "../node_modules"))
         )
         /* eslint-enable */

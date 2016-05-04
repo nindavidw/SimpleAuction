@@ -13,7 +13,9 @@ config.plugins = config.plugins.concat([
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
   new webpack.DefinePlugin({
-    __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+    "process.env": {
+      NODE_ENV: JSON.stringify(process.env.DEBUG ? "development" : "production")
+    }
   })
 ]);
 

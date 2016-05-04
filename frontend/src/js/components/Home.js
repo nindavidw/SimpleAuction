@@ -23,7 +23,7 @@ export default class Home extends Component {
     const { title } = this.props;
     return (
       <main>
-        <h1>Welcome {title}!</h1>
+        <h1 className="text">Welcome {title}!</h1>
         <button onClick={e => this.actions.changeTitle(prompt())}>
           Update Title
         </button>
