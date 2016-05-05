@@ -47,8 +47,8 @@ module.exports = {
     ],*/
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.jsx?$/,
+        exclude: /node_modules/, 
         loaders: ["react-hot", "babel"]
       },
       {
@@ -64,7 +64,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           "style",
           "css!sass?sourceMap&" +
-          "includePaths[]=" + 
+          "includePaths[]=" +
           (path.resolve(__dirname, "../node_modules"))
         )
         /* eslint-enable */

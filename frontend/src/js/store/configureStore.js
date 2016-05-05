@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import reducers from '../reducers/index';
-import DevTools from '../containers/DevTools';
+import { DevTools } from '../containers';
 import { persistState } from 'redux-devtools';
 
 function getDebugSessionKey() {

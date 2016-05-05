@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as HomeActions from '../actions/HomeActions';
+import * as HomeActions from '../../actions/HomeActions';
 
 @connect(state => state.Sample)
 export default class Home extends Component {
