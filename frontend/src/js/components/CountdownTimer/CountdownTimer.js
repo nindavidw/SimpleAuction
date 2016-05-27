@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class AuctionTimer extends React.Component {
+export default class CountdownTimer extends React.Component {
   static propTypes = {
     initialTimeRemaining: React.PropTypes.number.isRequired,
     completeCallback: React.PropTypes.func,

@@ -1,10 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
-const defaultState = {
-  joining: false
+const initialState = {
+  joining: false,
+  user: null
 };
 
-export default function (state = defaultState, action) {
+export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case ActionTypes.JOIN:
       return {

@@ -9,7 +9,6 @@ import {
   Join
 } from './containers';
 
-
 export default (store) => {
   const requireJoin = (nextState, replace, cb) => {
     function checkJoined() {

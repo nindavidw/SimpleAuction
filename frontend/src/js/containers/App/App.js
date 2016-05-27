@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, AuctionTimer } from '../../components';
+import { Header, CountdownTimer } from '../../components';
 
 export default class App extends React.Component {
   static propTypes = {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <AuctionTimer initialTimeRemaining={180000} />
+        <CountdownTimer initialTimeRemaining={180000} />
         <div className="container">
           {this.props.children}
         </div>

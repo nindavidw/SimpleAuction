@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, IndexLink } from 'react-router';
 
 import {
   Nav,
@@ -12,12 +13,12 @@ export default () => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">Demo Auction</a>
+        <IndexLink to="/">Demo Auction</IndexLink>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav pullRight>
-      <NavItem eventKey={1} href="#">Auction</NavItem>
-      <NavItem eventKey={2} href="/about">About</NavItem>
+      <NavItem eventKey={1} href="/auction" to="/auction">Auction</NavItem>
+      <NavItem eventKey={2} componentClass={Link} href="/about" to="/about">About</NavItem>
       <NavDropdown eventKey={3} title="Welcome John" id="basic-nav-dropdown">
         <MenuItem eventKey={3.1}>Sign Out</MenuItem>
       </NavDropdown>
